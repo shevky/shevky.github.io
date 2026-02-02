@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html
+  lang="{{lang}}"
+  data-lang="{{lang}}"
+  data-site-base="{{{site.url}}}"
+  data-lang-default="{{site.defaultLanguage}}"
+  data-langs="{{site.languagesCsv}}"
+  {{#page.alternates.tr}}data-lang-tr="{{{page.alternates.tr}}}"{{/page.alternates.tr}}
+  {{#page.alternates.en}}data-lang-en="{{{page.alternates.en}}}"{{/page.alternates.en}}
+>
+<head>
+  {{> partials/_head }}
+</head>
+<body class="site-shell">
+  {{> partials/_header }}
+  <main class="mx-auto w-full max-w-[1280px] px-6 md:px-10">
+    {{{content}}}
+  </main>
+  {{> partials/_footer }}
+  <script src="/output.js" type="module"></script>
+  {{{scripts.analytics}}}
+</body>
+</html>

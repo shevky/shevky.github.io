@@ -1,0 +1,23 @@
+{
+  "name": "shevky-landing",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "shevky --build",
+    "dev": "shevky --dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "@shevky/core": "^0.0.3",
+    "@shevky/plugin-esbuild": "^0.0.1",
+    "@shevky/plugin-robots-txt": "^0.0.1",
+    "@shevky/plugin-rss": "^0.0.1",
+    "@shevky/plugin-sitemap": "^0.0.1",
+    "@shevky/plugin-tailwindcss": "^0.0.3"
+  }
+}

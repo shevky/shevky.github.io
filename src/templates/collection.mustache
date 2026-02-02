@@ -1,0 +1,35 @@
+<section class="section-wrap">
+  <div class="glass p-8 md:p-10">
+    <p class="text-xs uppercase tracking-[0.3em] text-muted">{{i18n.docs.title}}</p>
+    <h1 class="text-3xl md:text-4xl font-semibold mt-3">{{front.listHeading}}</h1>
+    <p class="text-muted mt-3">{{front.description}}</p>
+  </div>
+</section>
+
+{{#content}}
+  {{#html}}
+    <section class="prose max-w-none">
+      {{{html}}}
+    </section>
+  {{/html}}
+{{/content}}
+
+<section class="section-wrap">
+  {{#listing.hasItems}}
+    <div class="grid md:grid-cols-2 gap-6">
+      {{#listing.items}}
+        <a class="docs-card" href="{{canonical}}">
+          <p class="text-xs uppercase tracking-[0.3em] text-muted">{{categoryLabel}}</p>
+          <h2 class="text-xl font-semibold mt-2">{{title}}</h2>
+          {{#description}}
+            <p class="text-muted mt-2">{{description}}</p>
+          {{/description}}
+        </a>
+      {{/listing.items}}
+    </div>
+  {{/listing.hasItems}}
+
+  {{^listing.hasItems}}
+    <p class="text-muted">{{listing.emptyMessage}}</p>
+  {{/listing.hasItems}}
+</section>

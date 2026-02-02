@@ -1,0 +1,50 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="{{site.themeColor}}" />
+<title>{{#page.title}}{{page.title}}{{/page.title}}{{^page.title}}{{site.title}}{{/page.title}}</title>
+{{#page.description}}<meta name="description" content="{{page.description}}" />{{/page.description}}
+<meta name="robots" content="{{page.robots}}" />
+<link rel="canonical" href="{{page.canonical}}" />
+<link rel="icon" href="/assets/images/shevky-mascot.jpeg" type="image/jpeg" />
+
+{{#page.alternateLinks}}
+<link rel="alternate" hreflang="{{hreflang}}" href="{{url}}" />
+{{/page.alternateLinks}}
+
+<meta property="og:title" content="{{page.og.title}}" />
+<meta property="og:description" content="{{page.og.description}}" />
+<meta property="og:type" content="{{page.og.type}}" />
+<meta property="og:url" content="{{page.og.url}}" />
+<meta property="og:image" content="{{page.og.image}}" />
+<meta property="og:locale" content="{{page.og.locale}}" data-og-locale />
+{{#page.og.altLocale}}
+<meta property="og:locale:alternate" content="{{.}}" data-og-locale-alt />
+{{/page.og.altLocale}}
+
+<meta name="twitter:card" content="{{page.twitter.card}}" />
+<meta name="twitter:title" content="{{page.twitter.title}}" />
+<meta name="twitter:description" content="{{page.twitter.description}}" />
+<meta name="twitter:image" content="{{page.twitter.image}}" />
+
+{{#page.structuredData}}
+<script type="application/ld+json">{{{page.structuredData}}}</script>
+{{/page.structuredData}}
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="/output.css" />
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "light" || stored === "dark" ? stored : null;
+      if (!theme) {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    } catch (e) {}
+  })();
+</script>

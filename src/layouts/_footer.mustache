@@ -1,0 +1,21 @@
+<footer class="mt-16 border-t border-slate-200/60">
+  <div class="mx-auto w-full max-w-[1280px] px-6 md:px-10 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="space-y-3">
+      <p class="text-lg font-semibold">{{site.title}}</p>
+      <p class="text-sm text-muted">{{i18n.footer.tagline}}</p>
+      <div class="flex flex-wrap gap-2">
+        {{#i18n.footer.tags}}
+          <span class="tag-pill">{{text}}</span>
+        {{/i18n.footer.tags}}
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-3 text-sm">
+      {{#i18n.footer.links}}
+        <a class="btn-secondary" href="{{url}}">{{label}}</a>
+      {{/i18n.footer.links}}
+    </div>
+  </div>
+  <div class="mx-auto w-full max-w-[1280px] px-6 md:px-10 pb-10 text-xs text-muted">
+    {{i18n.footer.note}}
+  </div>
+</footer>

@@ -1,0 +1,69 @@
+<section class="section-wrap">
+  <div class="grid lg:grid-cols-2 gap-10 items-start">
+    <div class="space-y-6">
+      <span class="pill">{{i18n.hero.pill}}</span>
+      <h1 class="text-4xl md:text-5xl leading-tight">{{i18n.hero.title}}</h1>
+      <p class="text-lg text-muted">{{i18n.hero.subtitle}}</p>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3">
+        <a class="btn-primary w-full sm:w-auto" href="{{{site.home}}}{{i18n.links.quickStart}}/">{{i18n.hero.primaryCta}}</a>
+        <a class="btn-secondary w-full sm:w-auto" href="{{{site.home}}}docs/">{{i18n.hero.secondaryCta}}</a>
+      </div>
+      <p class="text-sm text-muted">{{i18n.hero.note}}</p>
+    </div>
+    <div class="glass glass-strong p-6 md:p-8">
+      <div class="mt-4 space-y-4">
+        {{#i18n.hero.highlights}}
+          <div class="summary-item">
+            <h3 class="text-lg font-semibold">{{title}}</h3>
+            <p class="text-muted">{{description}}</p>
+          </div>
+        {{/i18n.hero.highlights}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-wrap">
+  <div class="flex flex-col gap-4 mb-10">
+    <h2 class="section-title">{{i18n.sections.questions.title}}</h2>
+    <p class="section-subtitle">{{i18n.sections.questions.subtitle}}</p>
+  </div>
+  <div class="grid grid-cols-1 gap-6" data-accordion="single">
+    {{#i18n.sections.questions.items}}
+      <details class="qa-card">
+        <summary class="qa-summary">
+          <span class="text-xl font-semibold">{{question}}</span>
+          <span class="qa-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="qa-body text-muted">
+          <p>{{answer}}</p>
+        </div>
+      </details>
+    {{/i18n.sections.questions.items}}
+  </div>
+</section>
+
+<section class="section-wrap">
+  <div class="glass p-8 md:p-10">
+    <div class="quickstart-grid">
+      <div class="quickstart-text">
+        <h2 class="section-title">{{i18n.sections.quickstart.title}}</h2>
+        <p class="section-subtitle mt-2">{{i18n.sections.quickstart.subtitle}}</p>
+        <ul class="mt-4 space-y-2 text-muted list-disc list-inside">
+          {{#i18n.sections.quickstart.steps}}
+            <li>{{text}}</li>
+          {{/i18n.sections.quickstart.steps}}
+        </ul>
+      </div>
+      <div class="quickstart-media">
+        <img class="quickstart-image" src="/assets/images/shevky-process-flow.webp" alt="S.H.E.V.K.Y. is akis semasi" />
+      </div>
+      <div class="quickstart-cta">
+        <a class="btn-primary w-full" href="{{{site.home}}}{{i18n.links.quickStart}}/">{{i18n.sections.quickstart.primaryCta}}</a>
+      </div>
+      <div class="quickstart-secondary">
+        <a class="btn-secondary w-full" href="{{{site.home}}}docs/">{{i18n.sections.quickstart.secondaryCta}}</a>
+      </div>
+    </div>
+  </div>
+</section>

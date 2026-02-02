@@ -1,0 +1,30 @@
+<section class="section-wrap">
+  <div class="flex flex-col lg:flex-row gap-8 items-start">
+    <aside class="w-full lg:w-[30%]">
+      <details class="doc-sidebar lg:hidden">
+        <summary class="doc-sidebar-toggle">
+          <span>{{i18n.docs.menuTitle}}</span>
+          <span class="doc-sidebar-icon" aria-hidden="true"></span>
+        </summary>
+        <nav class="space-y-1 mt-4">
+          <a href="{{{site.home}}}docs/">{{i18n.docs.overview}}</a>
+          {{#i18n.docs.nav}}
+            <a href="{{{site.home}}}{{slug}}/">{{label}}</a>
+          {{/i18n.docs.nav}}
+        </nav>
+      </details>
+      <div class="doc-sidebar hidden lg:block">
+        <p class="text-xs uppercase tracking-[0.3em] text-muted mb-3">{{i18n.docs.menuTitle}}</p>
+        <nav class="space-y-1">
+          <a href="{{{site.home}}}docs/">{{i18n.docs.overview}}</a>
+          {{#i18n.docs.nav}}
+            <a href="{{{site.home}}}{{slug}}/">{{label}}</a>
+          {{/i18n.docs.nav}}
+        </nav>
+      </div>
+    </aside>
+    <article class="prose doc-panel max-w-none w-full lg:w-[70%]">
+      {{{content.html}}}
+    </article>
+  </div>
+</section>
