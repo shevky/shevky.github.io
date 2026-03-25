@@ -5,20 +5,21 @@
     "url": "https://shevky.github.io/",
     "themeColor": "#2f8f5b",
     "social": {
-      "rss": false,
+      "rss": true,
       "github": "https://github.com/shevky",
       "linkedin": "https://www.linkedin.com/in/fatihtatoglu"
-    }
+    },
+    "name": "S.H.E.V.K.Y."
   },
   "seo": {
-    "defaultImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+    "defaultImage": "https://shevky.github.io/assets/images/shevky-og-cover.png",
     "includeCollections": false,
     "includePaging": false
   },
   "analytics": {
-    "enabled": false,
+    "enabled": true,
     "gtmId": "",
-    "gaId": "",
+    "gaId": "G-PGSMZ20YD0",
     "clarityId": ""
   },
   "features": {
@@ -43,35 +44,65 @@
   },
   "content": {
     "pagination": {
-      "pageSize": 6,
+      "pageSize": 10,
       "segment": {
-        "tr": "sayfa",
-        "en": "page"
+        "en": "page",
+        "tr": "sayfa"
       }
     },
     "languages": {
-      "default": "tr",
-      "supported": ["tr", "en"],
+      "default": "en",
+      "supported": [
+        "en",
+        "tr"
+      ],
       "canonical": {
-        "tr": "/",
-        "en": "/en/"
+        "en": "/",
+        "tr": "/tr/"
       }
     },
     "collections": {}
   },
   "build": {
-    "minify": false,
-    "debug": true
+    "minify": true,
+    "debug": false
   },
   "robots": {
-    "allow": ["/"],
-    "disallow": ["assets/"]
+    "allow": [
+      "/"
+    ],
+    "disallow": []
   },
   "plugins": [
     "@shevky/plugin-robots-txt",
     "@shevky/plugin-tailwindcss",
     "@shevky/plugin-esbuild",
+    "@shevky/plugin-open-graph",
     "@shevky/plugin-rss",
     "@shevky/plugin-sitemap"
-  ]
+  ],
+  "pluginConfigs": {
+    "shevky-open-graph": {
+      "siteName": "S.H.E.V.K.Y. Documentation",
+      "publisherType": "organization",
+      "defaultTwitterCard": "summary_large_image",
+      "defaultImage": "https://shevky.github.io/assets/images/shevky-og-cover.png",
+      "exposePageMeta": true,
+      "enableSearchAction": false
+    },
+    "shevky-rss": {
+      "feedFilename": "feed.xml",
+      "feedTtl": 1440,
+      "feedItemCount": 100,
+      "includedSchemaTypes": [
+        "page"
+      ],
+      "includedCategories": [
+        "docs"
+      ]
+    },
+    "shevky-sitemap": {
+      "sitemapFilename": "sitemap.xml"
+    }
+  }
 }

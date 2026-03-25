@@ -1,31 +1,62 @@
-<header class="mx-auto w-full max-w-[1280px] px-6 md:px-10 py-6 flex flex-wrap items-center justify-between gap-4 relative">
+<header class="mx-auto w-full max-w-7xl px-6 md:px-10 py-5 flex flex-wrap items-center justify-between gap-4 relative" role="banner">
   <div class="flex items-center gap-3">
-    <a href="{{{site.home}}}" class="brand-link">
-      <img class="brand-mark" src="/assets/images/shevky-mascot.jpeg" alt="S.H.E.V.K.Y. logo" />
+    <a href="{{{site.home}}}" class="brand-link" aria-label="{{site.title}} - {{i18n.menu.home}}">
+      <img class="brand-mark" src="/assets/images/shevky-mascot.jpeg" alt="" aria-hidden="true" width="44" height="44" loading="eager" />
       <span class="text-xl font-semibold tracking-tight">{{site.title}}</span>
     </a>
-    <span class="hidden md:inline text-xs uppercase tracking-[0.3em] text-muted">
+    <span class="hidden lg:inline text-xs uppercase tracking-[0.3em] text-muted font-medium" aria-hidden="true">
       {{site.role}}
     </span>
   </div>
 
-  <div class="flex items-center gap-2">
-    <button type="button" data-lang-toggle class="btn-ghost" aria-label="{{i18n.header.actions.language}}">
-      {{i18n.header.actions.languageShort}}
-    </button>
-    <button type="button" data-theme-toggle class="btn-ghost" aria-label="{{i18n.header.actions.theme}}">
-      <span class="sr-only">{{i18n.header.actions.theme}}</span>
+  <nav class="hidden md:flex items-center gap-1.5 site-nav" data-site-nav aria-label="{{i18n.header.actions.menu}}">
+    <a href="{{{site.home}}}" class="nav-link">{{i18n.menu.home}}</a>
+    <a href="{{{site.home}}}docs/" class="nav-link">{{i18n.menu.docs}}</a>
+  </nav>
+
+  <div class="flex items-center gap-1.5">
+    <button type="button" data-lang-toggle class="btn-ghost" aria-label="{{i18n.header.actions.language}}" title="{{i18n.header.actions.language}}">
+      <!-- Globe SVG icon -->
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4"></circle>
-        <path d="M12 2v2"></path>
-        <path d="M12 20v2"></path>
-        <path d="M4.93 4.93l1.41 1.41"></path>
-        <path d="M17.66 17.66l1.41 1.41"></path>
-        <path d="M2 12h2"></path>
-        <path d="M20 12h2"></path>
-        <path d="M4.93 19.07l1.41-1.41"></path>
-        <path d="M17.66 6.34l1.41-1.41"></path>
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M2 12h20"></path>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span class="text-xs font-bold">{{i18n.header.actions.languageShort}}</span>
+    </button>
+
+    <button type="button" data-theme-toggle class="btn-ghost" aria-label="{{i18n.header.actions.theme}}" title="{{i18n.header.actions.theme}}">
+      <!-- Sun icon (light mode) -->
+      <span class="theme-icon-sun" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path><path d="M12 20v2"></path>
+          <path d="M4.93 4.93l1.41 1.41"></path><path d="M17.66 17.66l1.41 1.41"></path>
+          <path d="M2 12h2"></path><path d="M20 12h2"></path>
+          <path d="M4.93 19.07l1.41-1.41"></path><path d="M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </span>
+      <!-- Moon icon (dark mode) -->
+      <span class="theme-icon-moon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </span>
+    </button>
+
+    <!-- Mobile menu button -->
+    <button type="button" data-menu-toggle class="mobile-menu-btn md:hidden" aria-label="{{i18n.header.actions.menu}}" aria-expanded="false" aria-controls="mobile-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
       </svg>
     </button>
   </div>
+
+  <!-- Mobile nav overlay -->
+  <nav id="mobile-nav" class="md:hidden site-nav" data-site-nav data-open="false" aria-label="{{i18n.header.actions.menu}}">
+    <a href="{{{site.home}}}" class="nav-link">{{i18n.menu.home}}</a>
+    <a href="{{{site.home}}}docs/" class="nav-link">{{i18n.menu.docs}}</a>
+  </nav>
 </header>

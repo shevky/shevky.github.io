@@ -11,13 +11,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.2.2",
     "@tailwindcss/typography": "^0.5.19",
-    "@shevky/core": "^0.0.8",
+    "@shevky/core": "^0.0.10",
     "@shevky/plugin-esbuild": "^0.0.3",
     "@shevky/plugin-robots-txt": "^0.0.3",
-    "@shevky/plugin-rss": "^0.0.3",
+    "@shevky/plugin-rss": "^0.0.4",
     "@shevky/plugin-sitemap": "^0.0.4",
-    "@shevky/plugin-tailwindcss": "^0.0.5"
+    "@shevky/plugin-tailwindcss": "^0.0.5",
+    "@shevky/plugin-open-graph": "^0.0.1"
   }
 }

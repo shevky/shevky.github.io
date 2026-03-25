@@ -1,29 +1,34 @@
 <section class="section-wrap">
   <div class="flex flex-col lg:flex-row gap-8 items-start">
-    <aside class="w-full lg:w-[30%]">
+    <aside class="w-full lg:w-[28%]" role="navigation" aria-label="{{i18n.docs.menuTitle}}">
       <details class="doc-sidebar lg:hidden">
         <summary class="doc-sidebar-toggle">
           <span>{{i18n.docs.menuTitle}}</span>
           <span class="doc-sidebar-icon" aria-hidden="true"></span>
         </summary>
-        <nav class="space-y-1 mt-4">
+        <nav class="space-y-0.5 mt-4">
           <a href="{{{site.home}}}docs/">{{i18n.docs.overview}}</a>
           {{#i18n.docs.nav}}
-            <a href="{{{site.home}}}{{slug}}/">{{label}}</a>
+            <a href="{{{site.home}}}{{slug}}/" title="{{description}}">{{label}}</a>
           {{/i18n.docs.nav}}
         </nav>
       </details>
       <div class="doc-sidebar hidden lg:block">
-        <p class="text-xs uppercase tracking-[0.3em] text-muted mb-3">{{i18n.docs.menuTitle}}</p>
-        <nav class="space-y-1">
+        <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4 font-semibold">{{i18n.docs.menuTitle}}</p>
+        <nav class="space-y-0.5">
           <a href="{{{site.home}}}docs/">{{i18n.docs.overview}}</a>
           {{#i18n.docs.nav}}
-            <a href="{{{site.home}}}{{slug}}/">{{label}}</a>
+            <a href="{{{site.home}}}{{slug}}/" title="{{description}}">{{label}}</a>
           {{/i18n.docs.nav}}
         </nav>
       </div>
     </aside>
-    <article class="prose doc-panel max-w-none w-full lg:w-[70%]">
+    <article class="prose doc-panel max-w-none w-full lg:w-[72%] fade-in-up">
+      <nav class="text-sm text-muted mb-6 flex items-center gap-1.5" aria-label="Breadcrumb">
+        <a href="{{{site.home}}}" class="hover:text-accent transition-colors">{{i18n.menu.home}}</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="text-muted"><path d="M9 18l6-6-6-6"></path></svg>
+        <a href="{{{site.home}}}docs/" class="hover:text-accent transition-colors">{{i18n.menu.docs}}</a>
+      </nav>
       {{{content.html}}}
     </article>
   </div>

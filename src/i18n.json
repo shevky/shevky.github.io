@@ -58,6 +58,10 @@
       "menu": {
         "tr": "Menüyü aç/kapat",
         "en": "Toggle menu"
+      },
+      "skipToContent": {
+        "tr": "İçeriğe atla",
+        "en": "Skip to content"
       }
     }
   },
@@ -136,42 +140,62 @@
       "items": [
         {
           "question": {
-            "tr": "S.H.E.V.K.Y. nedir?",
-            "en": "What is S.H.E.V.K.Y.?"
+            "tr": "Landing sayfası ve dokümantasyon sitesini tek projede üretebilir miyim?",
+            "en": "Can I build both a landing page and a documentation site in one project?"
           },
           "answer": {
-            "tr": "S.H.E.V.K.Y., blog, landing page, kişisel sayfa ve dokümantasyon gibi tüm statik sayfaları üreten CLI tabanlı bir static site generator. İçeriği Markdown ile yazar, şablonları Mustache ile yönetir ve tek bir statik çıktı üretir.",
-            "en": "S.H.E.V.K.Y. is a CLI-based static site generator for blogs, landing pages, personal sites, and documentation. You write in Markdown, manage templates with Mustache, and ship a single static output."
+            "tr": "Evet. Shevky aynı proje içinde landing, docs, blog ve diğer statik sayfa tiplerini yönetir. İçeriği Markdown ve front matter ile tutar, template/layout seçimine göre tek bir `dist/` çıktısı üretir.",
+            "en": "Yes. Shevky can manage landing pages, docs, blogs, and other static page types in a single project. Content is stored with Markdown + front matter, then rendered into one `dist/` output using template/layout selection."
           }
         },
         {
           "question": {
-            "tr": "Neden S.H.E.V.K.Y.'yi kullanmaliyim?",
-            "en": "Why should I use S.H.E.V.K.Y.?"
+            "tr": "İlk yayınlanabilir versiyonu ne kadar hızlı çıkarabilirim?",
+            "en": "How quickly can I ship a first version?"
           },
           "answer": {
-            "tr": "Az konfigürasyonla hızlı build alır, dil desteği ve şablon yapısı ile ekibin tek standartta ilerlemesini sağlar. Hızlı prototipleme ile fikirleri aynı gün yayına çıkarmak için idealdir.",
-            "en": "It keeps configuration minimal while giving your team a consistent structure and fast builds. It is ideal for rapid prototyping and shipping ideas the same day."
+            "tr": "Hızlı başlangıç akışıyla birkaç adımda yayınlanabilir bir temel kurabilirsin: kurulumu yap, ilk Markdown sayfanı oluştur, `shevky --build` ile çıktıyı al ve statik olarak deploy et.",
+            "en": "With the quickstart flow, you can ship a working baseline in a few steps: install dependencies, create your first Markdown page, run `shevky --build`, and deploy the static output."
           }
         },
         {
           "question": {
-            "tr": "S.H.E.V.K.Y. bana neler sağlar?",
-            "en": "What does S.H.E.V.K.Y. give me?"
+            "tr": "Çoklu dil desteği nasıl çalışıyor?",
+            "en": "How does multilingual support work?"
           },
           "answer": {
-            "tr": "Blog, landing, kişisel sayfa ve dokümantasyon gibi tüm statik sayfaları tek yapıda toplar; içerik akışını, tasarımı ve yayınlama çıktılarını standartlaştırır. Hızlı prototipleme, tekrar kullanılabilir şablonlar ve temiz bir klasör yapısı sunar.",
-            "en": "It unifies blogs, landing pages, personal sites, and docs in one structure, standardizing content flow, layout, and deployment. You get rapid prototyping, reusable templates, and a clean project layout."
+            "tr": "Dil yapısını `site.json` içindeki `content.languages` ile tanımlarsın. Her içerik dosyasında `lang` alanı kullanılır; Shevky her dil için URL, menü, canonical/alternate meta ve feed/sitemap çıktısı üretir.",
+            "en": "You define language configuration with `content.languages` in `site.json`. Each content file declares `lang`; Shevky then generates per-language URLs, menus, canonical/alternate metadata, and feed/sitemap outputs."
           }
         },
         {
           "question": {
-            "tr": "S.H.E.V.K.Y. kimlere uygun?",
-            "en": "Who is it for?"
+            "tr": "Plugin sistemiyle neleri özelleştirebilirim?",
+            "en": "What can I customize with the plugin system?"
           },
           "answer": {
-            "tr": "Kişisel site, blog, dokümantasyon veya landing sayfalarını hızlıca yayına almak isteyen bireyler ve küçük ekipler. Kurumlar için de dokümantasyon ve mikro sitelerde hızlı teslim gerektiren senaryolarda uygundur.",
-            "en": "Individuals and small teams who want to ship personal sites, blogs, docs, or landing pages quickly. It also fits teams that need fast delivery for documentation or micro sites."
+            "tr": "Plugin’lerle varlık derleme (Tailwind/esbuild), SEO/OG meta üretimi, RSS, sitemap, robots.txt ve dış kaynaktan içerik yükleme gibi adımları build yaşam döngüsündeki hook’lar üzerinden genişletebilirsin.",
+            "en": "Plugins let you extend build hooks for asset processing (Tailwind/esbuild), SEO/OG metadata, RSS, sitemap, robots.txt, and external content ingestion."
+          }
+        },
+        {
+          "question": {
+            "tr": "Backend veya runtime sunucu gerekiyor mu?",
+            "en": "Do I need a backend or runtime server?"
+          },
+          "answer": {
+            "tr": "Hayır. Shevky build sonucunda düz statik dosyalar üretir. Çıktı `dist/` klasöründedir ve herhangi bir statik hosting platformunda doğrudan sunulabilir.",
+            "en": "No. Shevky generates plain static files at build time. Output lives in `dist/` and can be served directly on any static hosting platform."
+          }
+        },
+        {
+          "question": {
+            "tr": "Çıktıyı nereye deploy edebilirim?",
+            "en": "Where can I deploy the output?"
+          },
+          "answer": {
+            "tr": "GitHub Pages, Netlify, Vercel, Docker veya statik dosya servis edebilen herhangi bir altyapıya deploy edebilirsin. CI/CD akışıyla otomatik build ve yayın da kolayca kurulabilir.",
+            "en": "You can deploy to GitHub Pages, Netlify, Vercel, Docker, or any platform that serves static files. CI/CD pipelines can also automate build and release flows."
           }
         }
       ]
@@ -227,8 +251,8 @@
   },
   "links": {
     "quickStart": {
-      "tr": "docs/hızlı-başlangıç",
-      "en": "docs/quick-start"
+      "tr": "docs/getting-started/quickstart",
+      "en": "docs/getting-started/quickstart"
     }
   },
   "docs": {
@@ -250,47 +274,69 @@
     },
     "nav": [
       {
-        "slug": "docs/hizli-baslangic",
+        "slug": "docs/getting-started",
         "label": {
-          "tr": "Hızlı başlangıç",
-          "en": "Quick start"
+          "tr": "Başlangıç",
+          "en": "Getting Started"
         },
         "description": {
-          "tr": "Kurulum, klasör yapısı ve ilk build.",
-          "en": "Install, structure, and your first build."
+          "tr": "Kurulum, temel kavramlar ve proje yapısı.",
+          "en": "Installation, core concepts, and project structure."
         }
       },
       {
-        "slug": "docs/icerik-olusturma",
+        "slug": "docs/tutorials",
         "label": {
-          "tr": "İçerik olusturma",
-          "en": "Content creation"
+          "tr": "Eğitimler",
+          "en": "Tutorials"
         },
         "description": {
-          "tr": "Markdown içerik, frontmatter ve sayfa mantigi.",
-          "en": "Markdown content, frontmatter, and pages."
+          "tr": "Adım adım uygulamalı öğrenim akışı.",
+          "en": "Step-by-step hands-on learning path."
         }
       },
       {
-        "slug": "docs/icerik-basliklari",
+        "slug": "docs/guides",
         "label": {
-          "tr": "İçerik basliklari",
-          "en": "Content headings"
+          "tr": "Kılavuzlar",
+          "en": "Guides"
         },
         "description": {
-          "tr": "Baslik hiyerarsisi ve okunabilirlik.",
-          "en": "Heading hierarchy and readability."
+          "tr": "Görev odaklı kullanım rehberleri.",
+          "en": "Task-oriented usage guides."
         }
       },
       {
-        "slug": "docs/hazirlaniyor",
+        "slug": "docs/deploy",
         "label": {
-          "tr": "Hazirlaniyor",
-          "en": "In progress"
+          "tr": "Dağıtım",
+          "en": "Deploy"
         },
         "description": {
-          "tr": "Dokümantasyon gelistirme notlari.",
-          "en": "Documentation work in progress."
+          "tr": "Build çıktısını üretime alma seçenekleri.",
+          "en": "Production deployment options."
+        }
+      },
+      {
+        "slug": "docs/extend",
+        "label": {
+          "tr": "Genişletme",
+          "en": "Extend"
+        },
+        "description": {
+          "tr": "Plugin sistemi ve eklenti geliştirme.",
+          "en": "Plugin system and extension authoring."
+        }
+      },
+      {
+        "slug": "docs/reference",
+        "label": {
+          "tr": "Referans",
+          "en": "Reference"
+        },
+        "description": {
+          "tr": "CLI, konfigürasyon ve tip referansları.",
+          "en": "CLI, configuration, and type references."
         }
       }
     ]
@@ -311,12 +357,20 @@
   },
   "footer": {
     "tagline": {
-      "tr": "S.H.E.V.K.Y. ile hız, kolaylik ve hızlı prototipleme bir arada.",
+      "tr": "S.H.E.V.K.Y. ile hız, kolaylık ve hızlı prototipleme bir arada.",
       "en": "S.H.E.V.K.Y. combines speed, simplicity, and rapid prototyping."
     },
     "note": {
-      "tr": "S.H.E.V.K.Y. © 2026",
-      "en": "S.H.E.V.K.Y. © 2026"
+      "tr": "S.H.E.V.K.Y. © 2025",
+      "en": "S.H.E.V.K.Y. © 2025"
+    },
+    "linksTitle": {
+      "tr": "Bağlantılar",
+      "en": "Links"
+    },
+    "madeWith": {
+      "tr": "S.H.E.V.K.Y. ile yapıldı.",
+      "en": "Made by S.H.E.V.K.Y."
     },
     "links": [
       {
@@ -333,7 +387,7 @@
         },
         "url": {
           "tr": "/docs/",
-          "en": "/en/docs/"
+          "en": "/docs/"
         }
       },
       {
@@ -341,7 +395,10 @@
           "tr": "Lisans",
           "en": "License"
         },
-        "url": "https://github.com/fatihtatoglu/shevky/blob/main/LICENSE"
+        "url": {
+          "tr": "/tr/docs/lisans/",
+          "en": "/docs/license/"
+        }
       }
     ],
     "tags": [
