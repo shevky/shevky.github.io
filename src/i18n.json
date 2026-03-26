@@ -399,6 +399,17 @@
           "tr": "/tr/docs/lisans/",
           "en": "/docs/license/"
         }
+      },
+      {
+        "label": {
+          "tr": "NPM Repo",
+          "en": "NPM Repository"
+        },
+        {
+"tr": "https://www.npmjs.com/org/shevky",
+        "en": "https://www.npmjs.com/org/shevky"
+        
+        }
       }
     ],
     "tags": [
